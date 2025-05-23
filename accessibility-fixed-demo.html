@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- FIXED: Added language attribute -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Issues Demo - Fixed Version</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* FIXED: Proper color contrast */
+        .good-contrast {
+            color: #000000;
+            background-color: #ffffff;
+            padding: 10px;
+            border: 1px solid #cccccc;
+        }
+        
+        /* FIXED: Visible focus indicators */
+        button:focus, input:focus, a:focus {
+            outline: 2px solid #0066cc;
+            outline-offset: 2px;
+        }
+        
+        /* FIXED: Use patterns/icons in addition to color */
+        .required {
+            color: #d73502;
+        }
+        .required::after {
+            content: " *";
+            color: #d73502;
+        }
+        
+        /* FIXED: Readable font size */
+        .readable-text {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        /* Skip link styles */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        .error {
+            color: #d73502;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- FIXED: Added skip link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- FIXED: Proper heading hierarchy -->
+    <h1>Welcome to Our Website</h1>
+    <h2>About Us</h2>
+    <h3>Our Services</h3>
+    
+    <main id="main-content">
+        <!-- FIXED: Proper alt text -->
+        <img src="https://via.placeholder.com/300x200" alt="Company headquarters building" width="300" height="200">
+        
+        <!-- FIXED: Decorative image with empty alt -->
+        <img src="https://via.placeholder.com/100x50" alt="" role="presentation">
+        
+        <p class="good-contrast">
+            This text has proper color contrast and is easy to read for all users.
+        </p>
+        
+        <!-- FIXED: Descriptive link text -->
+        <p>Learn more about <a href="#about">our company history</a> or <a href="#contact">contact our support team</a>.</p>
+        
+        <!-- FIXED: Form with proper labels -->
+        <form>
+            <fieldset>
+                <legend>Contact Form</legend>
+                
+                <label for="name">Name <span class="required">*</span>:</label>
+                <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-error">
+                <div id="name-error" class="error" style="display: none;">Name is required</div>
+                <br><br>
+                
+                <label for="email">Email <span class="required">*</span>:</label>
+                <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-error">
+                <div id="email-error" class="error" style="display: none;">Valid email is required</div>
+                <br><br>
+                
+                <!-- FIXED: Proper label association -->
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="#terms">terms and conditions</a> <span class="required">*</span></label>
+                <br><br>
+                
+                <button type="submit">Submit Contact Form</button>
+            </fieldset>
+        </form>
+        
+        <!-- FIXED: Don't rely on color alone -->
+        <p>Required fields are marked with an asterisk (*) and shown in red.</p>
+        
+        <!-- FIXED: Media with controls and no autoplay -->
+        <audio controls>
+            <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmMZDBOHxvHYlUgiDlus5umocRwKUKbn8LhiGwU6ktf0zm4qBSl/zvLZiDcIG2i3796PSg4MUabt9WccBzqS2O7Yik0ICm23/eWKTgoN2+u6XppnHXZIIAA=" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <!-- FIXED: Proper button element -->
+        <button type="button" onclick="alert('Button clicked')">
+            Click Me
+        </button>
+        
+        <!-- FIXED: Table with proper headers -->
+        <table border="1" style="margin: 20px 0;">
+            <caption>Employee Information</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>25</td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>Jane</td>
+                    <td>30</td>
+                    <td>Boston</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- FIXED: Readable text size -->
+        <p class="readable-text">This text is properly sized for comfortable reading.</p>
+        
+        <!-- FIXED: Clear required field indicators and proper labels -->
+        <form novalidate>
+            <fieldset>
+                <legend>Registration</legend>
+                
+                <label for="username">Username <span class="required">*</span>:</label>
+                <input type="text" id="username" name="username" required aria-required="true" aria-describedby="username-help username-error" minlength="3">
+                <div id="username-help">Must be at least 3 characters long</div>
+                <div id="username-error" class="error" style="display: none;">Username must be at least 3 characters</div>
+                <br><br>
+                
+                <label for="password">Password <span class="required">*</span>:</label>
+                <input type="password" id="password" name="password" required aria-required="true" aria-describedby="password-help password-error" minlength="8">
+                <div id="password-help">Must be at least 8 characters with numbers and letters</div>
+                <div id="password-error" class="error" style="display: none;">Password must be at least 8 characters</div>
+                <br><br>
+                
+                <button type="submit">Create Account</button>
+            </fieldset>
+        </form>
+        
+        <!-- FIXED: Separate interactive elements -->
+        <p>
+            <a href="#link">Visit our main page</a>
+        </p>
+        <p>
+            <button type="button">Interactive button</button>
+        </p>
+        
+        <!-- FIXED: Form with validation -->
+        <form>
+            <label for="newsletter-email">Email for newsletter:</label>
+            <input type="email" id="newsletter-email" required aria-describedby="newsletter-error">
+            <div id="newsletter-error" class="error" style="display: none;">Please enter a valid email address</div>
+            <button type="submit">Subscribe to Newsletter</button>
+        </form>
+    </main>
+</body>
+</html>

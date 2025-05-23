@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<!-- VIOLATION 1: Missing lang attribute (WCAG 3.1.1) -->
+<head>
+    <meta charset="UTF-8">
+    <title>Accessibility Issues Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* VIOLATION 2: Poor color contrast (WCAG 1.4.3) */
+        .low-contrast {
+            color: #999999;
+            background-color: #cccccc;
+            padding: 10px;
+        }
+        
+        /* VIOLATION 3: No focus indicators (WCAG 2.4.7) */
+        button:focus, input:focus, a:focus {
+            outline: none;
+        }
+        
+        .color-only {
+            background-color: red;
+            color: green;
+        }
+        
+        /* VIOLATION 4: Text too small (WCAG 1.4.4) */
+        .tiny-text {
+            font-size: 8px;
+        }
+        
+        .fake-button {
+            padding: 10px 20px;
+            background: #007cba;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- VIOLATION 5: No skip link (WCAG 2.4.1) -->
+    
+    <!-- VIOLATION 6: Improper heading hierarchy (WCAG 1.3.1) -->
+    <h1>Welcome to Our Website</h1>
+    <h4>About Us</h4> <!-- Should be h2 -->
+    <h2>Our Services</h2> <!-- Should be h3 -->
+    
+    <!-- VIOLATION 7: Image without alt text (WCAG 1.1.1) -->
+    <img src="https://via.placeholder.com/300x200" width="300" height="200">
+    
+    <!-- VIOLATION 8: Decorative image with inappropriate alt text -->
+    <img src="https://via.placeholder.com/100x50" alt="Beautiful decorative border with flowers and stars">
+    
+    <p class="low-contrast">
+        This text has poor color contrast and may be difficult to read for users with visual impairments.
+    </p>
+    
+    <!-- VIOLATION 9: Non-descriptive link text (WCAG 2.4.4) -->
+    <p>For more information, <a href="#about">click here</a> or <a href="#contact">read more</a>.</p>
+    
+    <!-- VIOLATION 10: Form without proper labels (WCAG 1.3.1, 3.3.2) -->
+    <form>
+        <h3>Contact Form</h3>
+        Name: <input type="text" placeholder="Enter your name">
+        <br><br>
+        Email: <input type="email">
+        <br><br>
+        <!-- VIOLATION 11: No label association -->
+        <input type="checkbox"> I agree to the terms and conditions
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <!-- VIOLATION 12: Color-only information (WCAG 1.4.1) -->
+    <p class="color-only">Required fields are shown in red, optional fields in green.</p>
+    
+    <!-- VIOLATION 13: Auto-playing media (WCAG 1.4.2) -->
+    <audio autoplay loop>
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmMZDBOHxvHYlUgiDlus5umocRwKUKbn8LhiGwU6ktf0zm4qBSl/zvLZiDcIG2i3796PSg4MUabt9WccBzqS2O7Yik0ICm23/eWKTgoN2+u6XppnHXZIIAA"/> 
+    </audio>
+    
+    <!-- VIOLATION 14: Empty link (WCAG 2.4.4) -->
+    <a href="#home"></a>
+    
+    <!-- VIOLATION 15: Div used as button without proper ARIA (WCAG 4.1.2) -->
+    <div class="fake-button" onclick="alert('Button clicked')">
+        Click Me
+    </div>
+    
+    <!-- VIOLATION 16: Table without headers (WCAG 1.3.1) -->
+    <table border="1" style="margin: 20px 0;">
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>City</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>25</td>
+            <td>New York</td>
+        </tr>
+        <tr>
+            <td>Jane</td>
+            <td>30</td>
+            <td>Boston</td>
+        </tr>
+    </table>
+    
+    <!-- VIOLATION 17: Tiny text (WCAG 1.4.4) -->
+    <p class="tiny-text">This text is too small to read comfortably.</p>
+    
+    <!-- VIOLATION 18: Missing required field indicators (WCAG 3.3.2) -->
+    <form>
+        <h3>Registration</h3>
+        Username: <input type="text" required>
+        <br><br>
+        Password: <input type="password" required>
+        <br><br>
+        <button type="submit">Register</button>
+    </form>
+    
+    <!-- VIOLATION 19: Nested interactive elements (WCAG 4.1.2) -->
+    <a href="#link">
+        <button>Don't nest interactive elements</button>
+    </a>
+    
+    <!-- VIOLATION 20: Missing form validation (WCAG 3.3.1) -->
+    <form>
+        <input type="email" placeholder="Enter email">
+        <button type="submit">Subscribe</button>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "wcag-accessibility-demo",
+  "version": "1.0.0",
+  "description": "Educational demo showcasing WCAG accessibility issues and automated testing",
+  "main": "index.html",
+  "scripts": {
+    "test": "npx axe http://localhost:3000",
+    "serve": "serve -s . -p 3000",
+    "audit": "npm run serve & sleep 3 && npm test",
+    "test:all": "npm run test:issues && npm run test:fixed && npm run test:index",
+    "test:issues": "npx axe http://localhost:3000/accessibility-issues-demo.html",
+    "test:fixed": "npx axe http://localhost:3000/accessibility-fixed-demo.html",
+    "test:index": "npx axe http://localhost:3000/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roryp/wcag-accessibility-demo.git"
+  },
+  "keywords": [
+    "accessibility",
+    "wcag",
+    "a11y",
+    "demo",
+    "education"
+  ],
+  "author": "roryp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roryp/wcag-accessibility-demo/issues"
+  },
+  "homepage": "https://github.com/roryp/wcag-accessibility-demo#readme",
+  "devDependencies": {
+    "@axe-core/cli": "^4.7.0",
+    "axe-core": "^4.7.0",
+    "puppeteer": "^21.0.0",
+    "serve": "^14.2.0"
+  }
+}
