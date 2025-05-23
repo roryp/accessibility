@@ -81,18 +81,18 @@
         <p>Learn more about <a href="#about">our company history</a> or <a href="#contact">contact our support team</a>.</p>
         
         <!-- FIXED: Form with proper labels -->
-        <form>
-            <fieldset>
+        <form role="form">
+            <fieldset role="group">
                 <legend>Contact Form</legend>
                 
                 <label for="name">Name <span class="required">*</span>:</label>
                 <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-error">
-                <div id="name-error" class="error" style="display: none;">Name is required</div>
+                <div id="name-error" class="error" style="display: none;" aria-live="polite">Name is required</div>
                 <br><br>
                 
                 <label for="email">Email <span class="required">*</span>:</label>
                 <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-error">
-                <div id="email-error" class="error" style="display: none;">Valid email is required</div>
+                <div id="email-error" class="error" style="display: none;" aria-live="polite">Valid email is required</div>
                 <br><br>
                 
                 <!-- FIXED: Proper label association -->
@@ -114,7 +114,7 @@
         </audio>
         
         <!-- FIXED: Proper button element -->
-        <button type="button" onclick="alert('Button clicked')">
+        <button type="button" onclick="alert('Button clicked')" aria-label="Example interactive button">
             Click Me
         </button>
         
@@ -146,20 +146,20 @@
         <p class="readable-text">This text is properly sized for comfortable reading.</p>
         
         <!-- FIXED: Clear required field indicators and proper labels -->
-        <form novalidate>
-            <fieldset>
+        <form novalidate role="form">
+            <fieldset role="group">
                 <legend>Registration</legend>
                 
                 <label for="username">Username <span class="required">*</span>:</label>
                 <input type="text" id="username" name="username" required aria-required="true" aria-describedby="username-help username-error" minlength="3">
                 <div id="username-help">Must be at least 3 characters long</div>
-                <div id="username-error" class="error" style="display: none;">Username must be at least 3 characters</div>
+                <div id="username-error" class="error" style="display: none;" aria-live="polite">Username must be at least 3 characters</div>
                 <br><br>
                 
                 <label for="password">Password <span class="required">*</span>:</label>
                 <input type="password" id="password" name="password" required aria-required="true" aria-describedby="password-help password-error" minlength="8">
                 <div id="password-help">Must be at least 8 characters with numbers and letters</div>
-                <div id="password-error" class="error" style="display: none;">Password must be at least 8 characters</div>
+                <div id="password-error" class="error" style="display: none;" aria-live="polite">Password must be at least 8 characters</div>
                 <br><br>
                 
                 <button type="submit">Create Account</button>
@@ -171,14 +171,16 @@
             <a href="#link">Visit our main page</a>
         </p>
         <p>
-            <button type="button">Interactive button</button>
+            <button type="button" aria-label="Demo interactive button">Interactive button</button>
         </p>
         
         <!-- FIXED: Form with validation -->
-        <form>
+        <form aria-labelledby="newsletter-heading">
+            <div id="newsletter-heading" class="visually-hidden">Newsletter Subscription</div>
             <label for="newsletter-email">Email for newsletter:</label>
-            <input type="email" id="newsletter-email" required aria-describedby="newsletter-error">
-            <div id="newsletter-error" class="error" style="display: none;">Please enter a valid email address</div>
+            <input type="email" id="newsletter-email" required aria-describedby="newsletter-error newsletter-desc">
+            <div id="newsletter-desc" class="visually-hidden">Enter your email to subscribe to our newsletter</div>
+            <div id="newsletter-error" class="error" style="display: none;" aria-live="assertive" role="alert">Please enter a valid email address</div>
             <button type="submit">Subscribe to Newsletter</button>
         </form>
     </main>
