@@ -61,6 +61,11 @@
     <!-- FIXED: Added skip link -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
+    <!-- Notification for screen reader users -->
+    <div class="sr-announcement visually-hidden" aria-live="polite">
+        Welcome to the accessibility demo page. This page demonstrates proper accessibility features. Keyboard shortcuts information is available below the main heading.
+    </div>
+    
     <!-- FIXED: Proper heading hierarchy -->
     <h1>Welcome to Our Website</h1>
     <h2>About Us</h2>
@@ -76,6 +81,17 @@
         <p class="good-contrast">
             This text has proper color contrast and is easy to read for all users.
         </p>
+        
+        <div class="keyboard-instructions">
+            <h2>Keyboard Navigation Instructions</h2>
+            <p>For optimal accessibility, you can navigate this page using the following keyboard shortcuts:</p>
+            <ul>
+                <li><strong>Tab:</strong> Move between interactive elements (links, buttons, form controls)</li>
+                <li><strong>Enter/Space:</strong> Activate buttons or links when focused</li>
+                <li><strong>Arrow keys:</strong> Navigate within some components like audio player</li>
+                <li><strong>Escape:</strong> Close dialogs or cancel actions</li>
+            </ul>
+        </div>
         
         <!-- FIXED: Descriptive link text -->
         <p>Learn more about <a href="#about">our company history</a> or <a href="#contact">contact our support team</a>.</p>

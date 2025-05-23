@@ -139,6 +139,24 @@ th {
     font-weight: bold;
 }
 
+/* Keyboard instructions styling */
+.keyboard-instructions {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-left: 4px solid #0066cc;
+    border-radius: 0 4px 4px 0;
+}
+
+.keyboard-instructions h2 {
+    margin-top: 0;
+    color: #0066cc;
+}
+
+.keyboard-instructions ul {
+    padding-left: 1.5rem;
+}
+
 /* Accessibility Helpers */
 .visually-hidden {
     position: absolute;
