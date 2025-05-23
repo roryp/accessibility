@@ -108,10 +108,11 @@
         <p>Required fields are marked with an asterisk (*) and shown in red.</p>
         
         <!-- FIXED: Media with controls and no autoplay -->
-        <audio controls>
+        <audio controls aria-label="Sample audio clip" aria-describedby="audio-desc">
             <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmMZDBOHxvHYlUgiDlus5umocRwKUKbn8LhiGwU6ktf0zm4qBSl/zvLZiDcIG2i3796PSg4MUabt9WccBzqS2O7Yik0ICm23/eWKTgoN2+u6XppnHXZIIAA=" type="audio/wav">
             Your browser does not support the audio element.
         </audio>
+        <div id="audio-desc" class="visually-hidden">This is a short audio sample for demonstration purposes only</div>
         
         <!-- FIXED: Proper button element -->
         <button type="button" onclick="alert('Button clicked')" aria-label="Example interactive button">
@@ -119,8 +120,9 @@
         </button>
         
         <!-- FIXED: Table with proper headers -->
-        <table border="1" style="margin: 20px 0;">
+        <table border="1" style="margin: 20px 0;" role="table" aria-describedby="table-desc">
             <caption>Employee Information</caption>
+            <div id="table-desc" class="visually-hidden">Table showing employee names, ages and cities</div>
             <thead>
                 <tr>
                     <th scope="col">Name</th>
