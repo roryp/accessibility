@@ -28,6 +28,13 @@ header {
     border-radius: 8px;
     padding: 1.5rem;
     text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.demo-card:focus, 
+.demo-card:hover {
+    box-shadow: 0 0 0 2px #0066cc;
+    outline: none;
 }
 
 .button {
@@ -43,12 +50,12 @@ header {
 }
 
 .button-danger {
-    background-color: #dc3545;
+    background-color: #b41d2d; /* Improved contrast from #dc3545 */
     color: white;
 }
 
 .button-success {
-    background-color: #28a745;
+    background-color: #0e802f; /* Improved contrast from #28a745 */
     color: white;
 }
 
@@ -57,8 +64,9 @@ header {
 }
 
 .button:focus {
-    outline: 2px solid #0066cc;
-    outline-offset: 2px;
+    outline: 3px solid #0066cc;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 2px white;
 }
 
 section {
@@ -108,9 +116,10 @@ input, textarea, select {
 }
 
 input:focus, textarea:focus, select:focus {
-    outline: 2px solid #0066cc;
+    outline: 3px solid #0066cc;
     outline-offset: 2px;
     border-color: #0066cc;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.3);
 }
 
 table {
@@ -128,6 +137,36 @@ th, td {
 th {
     background-color: #f2f2f2;
     font-weight: bold;
+}
+
+/* Keyboard instructions styling */
+.keyboard-instructions {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-left: 4px solid #0066cc;
+    border-radius: 0 4px 4px 0;
+}
+
+.keyboard-instructions h2 {
+    margin-top: 0;
+    color: #0066cc;
+}
+
+.keyboard-instructions ul {
+    padding-left: 1.5rem;
+}
+
+/* Accessibility Helpers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 caption {
