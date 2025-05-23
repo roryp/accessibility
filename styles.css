@@ -43,12 +43,12 @@ header {
 }
 
 .button-danger {
-    background-color: #dc3545;
+    background-color: #b41d2d; /* Improved contrast from #dc3545 */
     color: white;
 }
 
 .button-success {
-    background-color: #28a745;
+    background-color: #0e802f; /* Improved contrast from #28a745 */
     color: white;
 }
 
@@ -57,8 +57,9 @@ header {
 }
 
 .button:focus {
-    outline: 2px solid #0066cc;
-    outline-offset: 2px;
+    outline: 3px solid #0066cc;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 2px white;
 }
 
 section {
@@ -108,9 +109,10 @@ input, textarea, select {
 }
 
 input:focus, textarea:focus, select:focus {
-    outline: 2px solid #0066cc;
+    outline: 3px solid #0066cc;
     outline-offset: 2px;
     border-color: #0066cc;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.3);
 }
 
 table {
