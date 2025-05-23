@@ -1,7 +1,5 @@
 # WCAG Accessibility Demo
 
-[![Accessibility Audit](https://github.com/roryp/wcag-accessibility-demo/actions/workflows/accessibility-audit.yml/badge.svg)](https://github.com/roryp/wcag-accessibility-demo/actions/workflows/accessibility-audit.yml)
-
 An educational repository demonstrating common WCAG (Web Content Accessibility Guidelines) violations and their solutions, complete with automated accessibility testing via GitHub Actions.
 
 ## 🎯 Purpose
